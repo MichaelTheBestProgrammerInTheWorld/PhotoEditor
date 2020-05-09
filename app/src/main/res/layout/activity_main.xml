@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/image_view"
+        android:layout_margin="8dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/choose_img_btn"
+        android:text="Select Photo"
+        android:layout_margin="8dp"
+        android:onClick="onClick"/>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/filters_container">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toon_filter_btn"
+                android:text="Toon"
+                android:layout_margin="8dp"
+                android:onClick="onClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sepia_filter_btn"
+                android:text="Sepia"
+                android:layout_margin="8dp"
+                android:onClick="onClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contrast_filter_btn"
+                android:text="Contrast"
+                android:layout_margin="8dp"
+                android:onClick="onClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/invert_filter_btn"
+                android:text="Invert"
+                android:layout_margin="8dp"
+                android:onClick="onClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pixel_filter_btn"
+                android:text="Pixel"
+                android:layout_margin="8dp"
+                android:onClick="onClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sketch_filter_btn"
+                android:text="Sketch"
+                android:layout_margin="8dp"
+                android:onClick="onClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/swirl_filter_btn"
+                android:text="Swirl"
+                android:layout_margin="8dp"
+                android:onClick="onClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/brightness_filter_btn"
+                android:text="Brightness"
+                android:layout_margin="8dp"
+                android:onClick="onClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/kuwahara_filter_btn"
+                android:text="Kuwahara"
+                android:layout_margin="8dp"
+                android:onClick="onClick"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/vignette_filter_btn"
+                android:text="Vignette"
+                android:layout_margin="8dp"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/save_img_btn"
+        android:text="Save Photo"
+        android:layout_margin="8dp"
+        android:onClick="onClick"/>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/image_view_test"
+        android:layout_margin="8dp"/>
+
+</LinearLayout>
