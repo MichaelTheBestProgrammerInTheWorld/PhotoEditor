@@ -6,22 +6,15 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.content.ContentResolver;
-import android.content.ContentValues;
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,15 +31,9 @@ import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Objects;
-import java.util.Random;
 
 import jp.wasabeef.glide.transformations.gpu.BrightnessFilterTransformation;
 import jp.wasabeef.glide.transformations.gpu.ContrastFilterTransformation;
-import jp.wasabeef.glide.transformations.gpu.GPUFilterTransformation;
 import jp.wasabeef.glide.transformations.gpu.InvertFilterTransformation;
 import jp.wasabeef.glide.transformations.gpu.KuwaharaFilterTransformation;
 import jp.wasabeef.glide.transformations.gpu.PixelationFilterTransformation;
@@ -103,28 +90,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 selectPhoto();
                 break;
             case R.id.save_img_btn:
-                Bitmap savedBitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
-                //if (savedBitmap != null) {
-//                    Bitmap a7a = new ImageSaver(this).
-//                            setFileName("myImage.png").
-//                            setDirectoryName("images").
-//                            //save(savedBitmap);
-//                    load();
-//                    test.setImageBitmap(a7a);
-                    //saveImage(this, savedBitmap, "imageName", "png");
-                    //test.setImageBitmap(savedBitmap);
-               // } else
-                    //Toast.makeText(this, "bitmap is null", Toast.LENGTH_SHORT).show();
-                //SaveImage(savedBitmap);
-//                String checkStr = MediaStore.Images.Media.insertImage(getContentResolver(), savedBitmap,"savedPic", "");
-//                if (checkStr != null) {
-//                    Toast.makeText(this, "Saved Successfully", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    Toast.makeText(this, "error", Toast.LENGTH_SHORT).show();
-//                }
-                //saveImageToGallery();
+
                 try {
-                    saveImage();
+                    saveImageToGallery();
                 } catch (IOException e) {
                     e.printStackTrace();
                     Log.e("lastError", e.getMessage());
@@ -216,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
-    private void saveImage() throws IOException {
+    private void saveImageToGallery() throws IOException {
 
         BitmapDrawable bitmapDrawable = (BitmapDrawable) imageView.getDrawable();
         Bitmap bitmap = bitmapDrawable.getBitmap();
